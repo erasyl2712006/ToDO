@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>ToDo Manager</h1>
+
+  <form id="taskForm">
+    <input name="title" type="text" placeholder="Название" required />
+    <input name="description" type="text" placeholder="Описание" />
+    <input name="date" type="date" required />
+    <input name="time" type="time" />
+    <input name="tags" type="text" placeholder="Теги (через запятую)" />
+    <select name="status" required>
+      <option value="">Статус</option>
+      <option value="ожидает">Ожидает</option>
+      <option value="выполнено">Выполнено</option>
+    </select>
+    <button type="submit">Добавить</button>
+  </form>
+
+  <div class="filters">
+    <select id="statusFilter">
+      <option value="all">Все</option>
+      <option value="pending">Ожидает</option>
+      <option value="completed">Выполнено</option>
+    </select>
+
+    <input id="tagFilter" type="text" placeholder="Фильтр по тегу" />
+    <select id="dateFilter">
+      <option value="all">Любая дата</option>
+      <option value="today">Сегодня</option>
+      <option value="upcoming">Будущие</option>
+      <option value="overdue">Просроченные</option>
+    </select>
+
+    <button id="todayBtn" type="button">Сегодня</button>
+    <button id="sortToggle" type="button">Отключить сортировку по дате</button>
+    <button id="exportBtn" type="button">Экспорт</button>
+    <input id="importInput" type="file" accept=".json" />
+  </div>
+
+  <div id="tasksByDay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

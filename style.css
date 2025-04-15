@@ -1,0 +1,181 @@
+/* ========== BASE ========== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* ========== FORM ========== */
+form#taskForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+form#taskForm input,
+form#taskForm select,
+form#taskForm button {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+form#taskForm button {
+  grid-column: span 2;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+form#taskForm button:hover {
+  background-color: #2980b9;
+}
+
+/* ========== FILTERS ========== */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filters select,
+.filters input[type="text"],
+.filters button,
+.filters input[type="file"] {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.filters button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.filters button:hover {
+  background-color: #1e8449;
+}
+
+/* ========== TASKS ========== */
+#tasksByDay {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.day-group {
+  background: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #3498db;
+}
+
+.day-group h3 {
+  margin-top: 0;
+  color: #34495e;
+  font-size: 18px;
+}
+
+.task {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.task:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.task.completed {
+  background-color: #e8f5e9;
+  border-color: #c8e6c9;
+}
+
+.task h4 {
+  margin: 0 0 5px;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.task p {
+  margin: 0 0 5px;
+  color: #555;
+  font-size: 14px;
+}
+
+.task .tags,
+.task .deadline {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.actions button:nth-child(1) {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.actions button:nth-child(2) {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.actions button:nth-child(3) {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.task.completed h4,
+.task.completed p,
+.task.completed .tags,
+.task.completed .deadline {
+  text-decoration: line-through;
+  color: #95a5a6;
+}
